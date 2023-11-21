@@ -33,6 +33,8 @@ class TemperatureSensor(Sensor):
 		Sensor.__init__(self, sens_id, 'Temperature', '°C', timestamp, time_resolution)
 		self.max_val = max_val
 		self.min_val = min_val
+		self.pippo = 10
+
 
 	def run(self):
 		while not self.stop:
