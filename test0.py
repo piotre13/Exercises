@@ -28,7 +28,7 @@ if __name__ == '__main__':
     name = input('what is your name?')
     print(name)
 
-    birth['birth_place'] = input('where did you born?')
+    birth['birth_place'] = input('where were you born?')
 
     fav_foods=[]
     flag = True
