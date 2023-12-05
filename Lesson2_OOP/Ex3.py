@@ -19,12 +19,14 @@ class AddressBook():
 
 		# fill the contacts
 		for contact in record['contacts']:
+
 			self.contacts.append(Contact(contact['name'], contact['surname'], contact['mail']))
 
 	def show(self):
 		"""shows the list of contacts"""
 		for contact in self.contacts:
 			print(contact)
+		return self.contacts
 
 	def find(self, surname):
 		# do the find with keywords
@@ -33,10 +35,12 @@ class AddressBook():
 
 		if not results:
 			print('No matching contact!')
+			return 'No matching contact!'
 		else:
 			print("I found the following results:\n")
 			for x in results:
 				print(x, '\n')
+			return results
 
 	def add_contact(self, name, surname, mail):
 		"""
@@ -44,13 +48,16 @@ class AddressBook():
 		"""
 		self.contacts.append(Contact(name, surname, mail))
 
-	def update_contact(self, name, surname, ):
+	def update_contact(self, name, surname, new_data=None ):
 		"""update_contact(name,surname): find the contact with given name and surname and allows edit of the email"""
 		updated = False
 		i = 0
 		while not updated:
 			if self.contacts[i].name == name and self.contacts[i].surname == surname:
-				self.contacts[i].mail = input(f"Insert the new mail of {name} {surname}: ")
+				if new_data == None:
+					self.contacts[i].mail = input(f"Insert the new mail of {name} {surname}: ")
+				else:
+					self.contacts[i] = Contact(new_data['name'], new_data['surname'], new_data['mail'])
 				updated = True
 			i += 1
 
