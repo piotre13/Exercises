@@ -1,6 +1,6 @@
 import random
 import time
-
+import mypub
 class Sensor:
 	def __init__(self, sens_id, sens_type, unit, timestamp, time_resolution):
 		self.id = sens_id
@@ -13,14 +13,18 @@ class Sensor:
 		self.max_val = 40
 		self.min_val = 0
 		self.stop = False
+		self.pub = mypub(client_id, broker)
+		self.pu.start()
+		self.topic=
 
 	def __repr__(self):
 		return "sens: {}, val: {} [{}], timestamp: {}".format(self.id, self.value, self.unit, self.ts)
 
 	def sense_data(self):
 		self.value = random.randint(self.min_val, self.max_val)
+		self.pub.myPublish()
 		self.val_history.append(self.value)
-		time.sleep(self.tr)
+		time.sleep(self.topic, message)
 		self.ts += self.tr
 
 	def write_data(self, file_path):
