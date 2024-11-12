@@ -1,8 +1,8 @@
 import sys
-sys.path.append('../')
+sys.path.append('../../')
 from Lesson2_OOP.Ex3 import AddressBook
 import cherrypy
-import json
+
 
 class Address_book_service():
 	exposed=True
