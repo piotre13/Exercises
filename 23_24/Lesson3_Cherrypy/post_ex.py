@@ -29,6 +29,8 @@ if __name__ == '__main__':
                 'tool.session.on': True
         }
     }
+
+	cherrypy.server.socket_host = '172.21.173.1'
     cherrypy.tree.mount(SimplePOST(), '/simple', conf)
     cherrypy.tree.mount(FancyPOST(), '/fancy', conf)
     # this is needed if you want to have the custom error page
