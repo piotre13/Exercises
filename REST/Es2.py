@@ -42,6 +42,8 @@ if __name__ == '__main__':
 		}
 	}
 
+	cherrypy.server.socket_host ='172.21.173.1'
+	cherrypy.server.socket_port= 8080
 	cherrypy.tree.mount(Addresses(), '/', conf)
 	cherrypy.engine.start()
 	cherrypy.engine.block()
