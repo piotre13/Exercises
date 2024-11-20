@@ -1,0 +1,1 @@
+All the exercises made in class in the year 2024/2025 are in the following folders divided by topic : OOP, REST, MQTT, TELEGRAM. In the folder 23_24 there are some of the exercises of the last year.  
