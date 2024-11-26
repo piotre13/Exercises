@@ -52,7 +52,7 @@ if __name__ == '__main__':
 	client_id = 'pippo233444'
 	broker = 'mqtt.eclipseprojects.io'
 	port = 1883
-	topic = 'Iot/Pietro/led'
+	topic = 'Iot/Pietro/led_23'
 	controller = Light_controller(client_id, broker, port, topic)
 	#controller.run()
 
