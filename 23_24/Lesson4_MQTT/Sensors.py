@@ -6,7 +6,7 @@ class Temp_sensor():
 	def __init__(self, client_id, broker, port,basic_topic,floor_id,room_id):
 		self.client_mqtt = MyMQTT(client_id, broker, port)
 		self.client_mqtt.start()
-		self.topic = basic_topic+'/'+str(floor_id)+'/'+ str(room_id)+str(client_id)
+		self.topic = basic_topic+'/'+str(floor_id)+'/'+ str(room_id)+'/'+str(client_id)
 		self.msg = {"bn": client_id,
 					"e": [
 						{"n": "temperature",
@@ -21,6 +21,7 @@ class Temp_sensor():
 		self.msg['e'][0]['v']=value
 		self.msg['e'][0]['t']=time.time()
 		self.client_mqtt.myPublish(self.topic, self.msg)
+		print(f'published on topic: {self.topic} the following msg: {self.msg}')
 
 	def stop(self):
 		self.client_mqtt.stop()
