@@ -1,5 +1,6 @@
 from MyMQTT import MyMQTT as client
 import time
+import json
 
 class Controller():
 	def __init__(self, client_id, broker,port,topic):
@@ -9,6 +10,8 @@ class Controller():
 		self.client.mySubscribe(topic)
 
 	def notify(self,topic,payload):
+		#payload = json.loads(payload)
+		print(type(payload))
 		print(f'topic {topic} with payload{payload}')
 		pass
 
@@ -17,10 +20,10 @@ class Controller():
 
 
 if __name__ == '__main__':
-	client_id = 'pippo2'
+	client_id = 'xkxkxkxkx'
 	broker = "mqtt.eclipseprojects.io"
 	port = 1883
-	topic = 'house2/room1/temperature'
+	topic = 'opendtu_solar_6314183758/112182839937/0/reactivepower'
 	controller = Controller(client_id, broker,port, topic)
 
 	while True:
