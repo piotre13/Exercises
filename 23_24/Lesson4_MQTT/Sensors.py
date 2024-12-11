@@ -49,7 +49,7 @@ if __name__ == '__main__':
 
 	for i in floor_ids:
 		for j in room_ids:
-			client_id = 'sensor_%s_%s'%(i,j)
+			client_id = 'sensorPietro_%s_%s'%(i,j)
 			inst = Temp_sensor(client_id,broker, port,basic_topic,i,j)
 			sensor_instances.append(inst)
 
