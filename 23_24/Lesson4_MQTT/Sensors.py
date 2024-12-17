@@ -58,6 +58,6 @@ if __name__ == '__main__':
 			el.run()
 		
 
-		time.sleep(10)
+		time.sleep(2)
 
 
